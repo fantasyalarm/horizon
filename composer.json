@@ -1,5 +1,5 @@
 {
-    "name": "laravel/horizon",
+    "name": "fantasyalarm/horizon",
     "description": "Dashboard and code-driven configuration for Laravel queues.",
     "keywords": ["laravel", "queue"],
     "license": "MIT",
@@ -7,16 +7,23 @@
         {
             "name": "Taylor Otwell",
             "email": "taylor@laravel.com"
-        }
+        },
+        {
+            "name": "Matt Wolf",
+            "email": "matt@fantasyalarm.com"
     ],
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
         "ext-pcntl": "*",
         "ext-posix": "*",
+        "fantasyalarm/database": "^2.0",
         "illuminate/contracts": "^8.17",
         "illuminate/queue": "^8.17",
         "illuminate/support": "^8.17",
+        "illuminate/events": "^8.11",
+        "illuminate/notifications": "^8.11",
+        "laravelcollective/html": "^6.0",
         "nesbot/carbon": "^2.17",
         "ramsey/uuid": "^4.0",
         "symfony/process": "^5.0",
@@ -30,7 +37,8 @@
     },
     "suggest": {
         "ext-redis": "Required to use the Redis PHP driver.",
-        "predis/predis": "Required when not using the Redis PHP driver (^1.1)."
+        "predis/predis": "Required when not using the Redis PHP driver (^1.1).",
+        "nexmo/client": "Required for sms notifications."
     },
     "autoload": {
         "psr-4": {
@@ -46,11 +54,11 @@
         "branch-alias": {
             "dev-master": "5.x-dev"
         },
-        "laravel": {
+        "framework": {
             "providers": [
                 "Laravel\\Horizon\\HorizonServiceProvider"
             ],
-            "aliases": {
+            "facades": {
                 "Horizon": "Laravel\\Horizon\\Horizon"
             }
         }
