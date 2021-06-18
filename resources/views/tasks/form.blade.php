@@ -1,4 +1,4 @@
-@extends('totem::layout')
+@extends('totem::totem-layout')
 @section('page-title')
     @parent
     - {{ $task->exists ? 'Update' : 'Create'}} Task
