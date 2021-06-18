@@ -11,13 +11,12 @@
         {
             "name": "Matt Wolf",
             "email": "matt@fantasyalarm.com"
+        }
     ],
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
-        "ext-pcntl": "*",
-        "ext-posix": "*",
-        "fantasyalarm/database": "^2.0",
+        "fantasyalarm/framework-database": "^2.0",
         "illuminate/contracts": "^8.17",
         "illuminate/queue": "^8.17",
         "illuminate/support": "^8.17",
@@ -36,6 +35,8 @@
         "predis/predis": "^1.1"
     },
     "suggest": {
+        "ext-json": "*",
+        "ext-posix": "*",
         "ext-redis": "Required to use the Redis PHP driver.",
         "predis/predis": "Required when not using the Redis PHP driver (^1.1).",
         "nexmo/client": "Required for sms notifications."
@@ -63,6 +64,10 @@
             }
         }
     },
+    "repositories": [
+        {"type": "composer", "url": "https://repo.packagist.com/fantasyalarm/"},
+        {"packagist.org": false}
+    ],
     "config": {
         "sort-packages": true
     },
