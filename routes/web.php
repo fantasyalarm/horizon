@@ -1,30 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*Route::prefix('totem')->group(function(){
-    Route::get('/', [\Laravel\Horizon\Totem\Http\Controllers\DashboardController::class,'index'])->name('totem.dashboard');
-    Route::group(['prefix' => 'tasks'], function () {
-        Route::get('/', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'index'])->name('totem.tasks.all');
-        Route::get('create', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'create'])->name('totem.task.create');
-        Route::post('create', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'store']);
-
-        Route::get('export', [\Laravel\Horizon\Totem\Http\Controllers\ExportTasksController::class,'index'])->name('totem.tasks.export');
-        Route::post('import', [\Laravel\Horizon\Totem\Http\Controllers\ImportTasksController::class,'index'])->name('totem.tasks.import');
-
-        Route::get('{task}', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'view'])->name('totem.task.view');
-
-        Route::get('{task}/edit', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'edit'])->name('totem.task.edit');
-        Route::post('{task}/edit', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'update']);
-
-        Route::delete('{task}', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'destroy'])->name('totem.task.delete');
-
-        Route::post('status', [\Laravel\Horizon\Totem\Http\Controllers\ActiveTasksController::class,'store'])->name('totem.task.activate');
-        Route::delete('status/{id}', [\Laravel\Horizon\Totem\Http\Controllers\ActiveTasksController::class,'destroy'])->name('totem.task.deactivate');
-
-        Route::get('{task}/execute', [\Laravel\Horizon\Totem\Http\Controllers\ExecuteTasksController::class,'index'])->name('totem.task.execute');
-    });
-});*/
 Route::prefix('api')->group(function () {
     // Dashboard Routes...
     Route::get('/stats', 'DashboardStatsController@index')->name('horizon.stats.index');

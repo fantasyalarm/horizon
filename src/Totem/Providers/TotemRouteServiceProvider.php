@@ -15,7 +15,7 @@ class TotemRouteServiceProvider extends RouteServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Studio\Totem\Http\Controllers';
+    protected $namespace = 'Laravel\Horizon\Totem\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -54,10 +54,14 @@ class TotemRouteServiceProvider extends RouteServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::prefix(config('totem.web.route_prefix', 'totem'))
-            ->middleware(config('totem.web.middleware'))
-            ->namespace($this->namespace)
-            ->group(__DIR__.'/../../routes/web.php');
+        Route::group([
+            'domain' => config('horizon.domain', null),
+            'prefix' => config('horizon.path'),
+            'namespace' => $this->namespace,
+            'middleware' => config('horizon.middleware', 'web'),
+        ], function () {
+            $this->loadRoutesFrom(__DIR__.'/../routes/totem.php');
+        });
     }
 
     /**
