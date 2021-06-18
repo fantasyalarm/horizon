@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('totem')->group(function(){
+/*Route::prefix('totem')->group(function(){
     Route::get('/', [\Laravel\Horizon\Totem\Http\Controllers\DashboardController::class,'index'])->name('totem.dashboard');
     Route::group(['prefix' => 'tasks'], function () {
         Route::get('/', [\Laravel\Horizon\Totem\Http\Controllers\TasksController::class,'index'])->name('totem.tasks.all');
@@ -24,7 +24,7 @@ Route::prefix('totem')->group(function(){
 
         Route::get('{task}/execute', [\Laravel\Horizon\Totem\Http\Controllers\ExecuteTasksController::class,'index'])->name('totem.task.execute');
     });
-});
+});*/
 Route::prefix('api')->group(function () {
     // Dashboard Routes...
     Route::get('/stats', 'DashboardStatsController@index')->name('horizon.stats.index');
