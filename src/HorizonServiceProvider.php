@@ -51,8 +51,6 @@ class HorizonServiceProvider extends ServiceProvider
      */
     protected function registerRoutes()
     {
-        Log::notice('Registering Resources');
-
         Route::group([
             'domain' => config('horizon.domain', null),
             'prefix' => config('horizon.path'),

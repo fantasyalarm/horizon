@@ -191,15 +191,4 @@ return [
             ],
         ],
     ],
-    'table_prefix' => env('HORIZON_TABLE_PREFIX', ''),
-    'database_connection' => env('HORIZON_DATABASE_CONNECTION'),
-    'artisan' => [
-        'command_filter' => [],
-        'whitelist' => true,
-    ],
-    'broadcasting' => [
-        'enabled' => env('HORIZON_BROADCASTING_ENABLED', true),
-        'channel' => env('HORIZON_BROADCASTING_CHANNEL', 'task.events'),
-    ],
-    'log_folder' => env('HORIZON_LOG_FOLDER', 'horizon'),
 ];
