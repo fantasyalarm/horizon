@@ -3,6 +3,7 @@
 namespace Laravel\Horizon;
 
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class HorizonApplicationServiceProvider extends ServiceProvider
@@ -42,9 +43,7 @@ class HorizonApplicationServiceProvider extends ServiceProvider
     protected function gate()
     {
         Gate::define('viewHorizon', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+            Log::notice(print_r($user));
         });
     }
 
