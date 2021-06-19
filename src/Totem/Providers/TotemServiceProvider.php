@@ -4,6 +4,7 @@ namespace Laravel\Horizon\Totem\Providers;
 
 use Cron\CronExpression;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
@@ -71,6 +72,7 @@ class TotemServiceProvider extends ServiceProvider
      */
     protected function registerResources()
     {
+        Log::notice('Registering Resources');
         $this->loadViewsFrom(__DIR__.'/../../../resources/views', 'totem');
         $this->loadMigrationsFrom(__DIR__.'/../../../database/migrations');
         $this->loadTranslationsFrom(__DIR__.'/../../../resources/lang', 'totem');
