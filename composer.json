@@ -55,7 +55,7 @@
     "extra": {
         "branch-alias": {
             "dev-master": "5.x-dev"
-        },
+        }
     },
     "repositories": [
         {"type": "composer", "url": "https://repo.packagist.com/fantasyalarm/"},
