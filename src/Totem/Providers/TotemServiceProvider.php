@@ -71,8 +71,8 @@ class TotemServiceProvider extends ServiceProvider
      */
     protected function registerResources()
     {
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'totem');
-        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'totem');
+        $this->loadViewsFrom(__DIR__.'/../../../resources/views', 'totem');
+        $this->loadMigrationsFrom(__DIR__.'/../../../database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../../../resources/lang', 'totem');
     }
 }
