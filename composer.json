@@ -56,14 +56,6 @@
         "branch-alias": {
             "dev-master": "5.x-dev"
         },
-        "framework": {
-            "providers": [
-                "Laravel\\Horizon\\HorizonServiceProvider"
-            ],
-            "facades": {
-                "Horizon": "Laravel\\Horizon\\Horizon"
-            }
-        }
     },
     "repositories": [
         {"type": "composer", "url": "https://repo.packagist.com/fantasyalarm/"},
