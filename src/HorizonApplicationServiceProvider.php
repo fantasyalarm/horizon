@@ -27,7 +27,7 @@ class HorizonApplicationServiceProvider extends ServiceProvider
     {
 
         Horizon::auth(function ($request) {
-            Log::notice(print_r($request->user()));
+            Log::notice(print_r($request->user(),1));
             return true;
         });
     }
