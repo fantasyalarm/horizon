@@ -2,7 +2,7 @@
 
 namespace Laravel\Horizon\Totem\Providers;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider;
+use Framework\Support\Providers\EventServiceProvider;
 
 class TotemEventServiceProvider extends EventServiceProvider
 {
