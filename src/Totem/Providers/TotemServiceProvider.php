@@ -22,7 +22,6 @@ class TotemServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerResources();
-        $this->defineAssetPublishing();
 
         Validator::extend('cron_expression', function ($attribute, $value, $parameters, $validator) {
             return CronExpression::isValidExpression($value);
@@ -75,33 +74,5 @@ class TotemServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'totem');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'totem');
-    }
-
-    /**
-     * Define the asset publishing configuration.
-     *
-     * @return void
-     */
-    public function defineAssetPublishing()
-    {
-        $this->publishes([
-            TOTEM_PATH.'/public/js' => public_path('vendor/totem/js'),
-        ], 'totem-assets');
-
-        $this->publishes([
-            TOTEM_PATH.'/public/css' => public_path('vendor/totem/css'),
-        ], 'totem-assets');
-
-        $this->publishes([
-            TOTEM_PATH.'/public/img' => public_path('vendor/totem/img'),
-        ], 'totem-assets');
-
-        $this->publishes([
-            TOTEM_PATH.'/resources/views' => resource_path('views/vendor/totem'),
-        ], 'totem-views');
-
-        $this->publishes([
-            TOTEM_PATH.'/config' => config_path(),
-        ], 'totem-config');
     }
 }
