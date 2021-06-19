@@ -2,7 +2,7 @@
 
 namespace Laravel\Horizon\Totem\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
+use Framework\Support\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Laravel\Horizon\Totem\Task;
 

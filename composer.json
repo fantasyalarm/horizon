@@ -17,6 +17,7 @@
         "php": "^7.3|^8.0",
         "ext-json": "*",
         "fantasyalarm/framework-database": "^2.0",
+        "fantasyalarm/framework": "^2.0",
         "illuminate/contracts": "^8.17",
         "illuminate/queue": "^8.17",
         "illuminate/support": "^8.17",
