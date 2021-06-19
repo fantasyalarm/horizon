@@ -4,6 +4,7 @@ namespace Laravel\Horizon;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Queue\QueueManager;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Connectors\RedisConnector;
@@ -50,6 +51,8 @@ class HorizonServiceProvider extends ServiceProvider
      */
     protected function registerRoutes()
     {
+        Log::notice('Registering Resources');
+
         Route::group([
             'domain' => config('horizon.domain', null),
             'prefix' => config('horizon.path'),
