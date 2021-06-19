@@ -93,6 +93,7 @@ class Totem
      */
     public static function baseTableExists(): bool
     {
+        return true;
         if (Cache::get('totem.table.'.TOTEM_TABLE_PREFIX.'tasks')) {
             return true;
         }
