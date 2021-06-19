@@ -40,11 +40,6 @@ class TotemServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../../config/totem.php',
-            'totem'
-        );
-
         if (! defined('TOTEM_PATH')) {
             define('TOTEM_PATH', realpath(__DIR__.'/../../'));
         }
