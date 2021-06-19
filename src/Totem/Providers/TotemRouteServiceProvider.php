@@ -27,23 +27,13 @@ class TotemRouteServiceProvider extends RouteServiceProvider
         parent::boot();
 
         Route::bind('task', function ($value) {
-            return cache()->rememberForever('totem.task.'.$value, function () use ($value) {
+            return cache()->rememberForever('totem.task.' . $value, function () use ($value) {
                 return Task::find($value) ?? abort(404);
             });
         });
-    }
-
-    /**
-     * Define the routes for the application.
-     *
-     * @return void
-     */
-    public function map()
-    {
-        $this->mapApiRoutes();
-
         $this->mapWebRoutes();
     }
+
 
     /**
      * Define the "web" routes for the application.
@@ -60,22 +50,7 @@ class TotemRouteServiceProvider extends RouteServiceProvider
             'namespace' => $this->namespace,
             'middleware' => config('horizon.middleware', 'web'),
         ], function () {
-            $this->loadRoutesFrom(__DIR__.'/../routes/totem.php');
+            $this->loadRoutesFrom(__DIR__ . '/../routes/totem.php');
         });
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
-    {
-        Route::prefix('api')
-            ->middleware(config('totem.web.middleware'))
-            ->namespace($this->namespace)
-            ->group(__DIR__.'/../../routes/api.php');
     }
 }
