@@ -50,7 +50,7 @@ class TotemRouteServiceProvider extends RouteServiceProvider
             'namespace' => $this->namespace,
             'middleware' => config('horizon.middleware', 'web'),
         ], function () {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/totem.php');
+            $this->loadRoutesFrom(__DIR__ . '/../../../routes/totem.php');
         });
     }
 }
