@@ -80,7 +80,7 @@ class HorizonServiceProvider extends ServiceProvider
     {
         $this->publishes([
             HORIZON_PATH.'/public' => public_path('vendor/horizon'),
-        ], 'horizon-assets');
+        ], ['horizon-assets', 'laravel-assets']);
     }
 
     /**
